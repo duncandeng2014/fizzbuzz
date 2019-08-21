@@ -18,7 +18,7 @@ public class FizzBuzz {
         IntStream.rangeClosed(1, 100)
                 .mapToObj(i -> fizzPredicate.test(i) ? (buzzPredicate.test(i) ? "FizzBuzz" : "Fizz") : (buzzPredicate.test(i) ? "Buzz" : i))
                 .forEach(System.out::println);
-        System.out.println("--------------------------stage1---------------------");
+        System.out.println("--------------------------stage2---------------------");
     }
 
     public static void main(String[] args) {
