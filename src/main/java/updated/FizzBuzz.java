@@ -5,9 +5,9 @@ import java.util.stream.IntStream;
 
 public class FizzBuzz {
 
-    public static final String FIZZ_BUZZ = "FizzBuzz";
-    public static final String FIZZ = "Fizz";
-    public static final String BUZZ = "Buzz";
+    private static final String FIZZ_BUZZ = "FizzBuzz";
+    private static final String FIZZ = "Fizz";
+    private static final String BUZZ = "Buzz";
 
     private static void fizzBuzzStage1(int num1, int num2) {
         IntStream.rangeClosed(1, 100)
