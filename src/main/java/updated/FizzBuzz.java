@@ -4,9 +4,14 @@ import java.util.function.IntPredicate;
 import java.util.stream.IntStream;
 
 public class FizzBuzz {
+
+    public static final String FIZZ_BUZZ = "FizzBuzz";
+    public static final String FIZZ = "Fizz";
+    public static final java.lang.String BUZZ = "Buzz";
+
     private static void fizzBuzzStage1(int num1, int num2) {
         IntStream.rangeClosed(1, 100)
-                .mapToObj(i -> i % num1 == 0 ? (i % num2 == 0 ? "FizzBuzz" : "Fizz") : (i % num2 == 0 ? "Buzz" : i))
+                .mapToObj(i -> i % num1 == 0 ? (i % num2 == 0 ? FIZZ_BUZZ : FIZZ) : (i % num2 == 0 ? BUZZ : i))
                 .forEach(System.out::println);
         System.out.println("--------------------------stage1---------------------");
     }
@@ -16,7 +21,7 @@ public class FizzBuzz {
         IntPredicate buzzPredicate = i -> (i % num2 == 0 || String.valueOf(i).chars().anyMatch(j -> j == (char) num2 + '0'));
 
         IntStream.rangeClosed(1, 100)
-                .mapToObj(i -> fizzPredicate.test(i) ? (buzzPredicate.test(i) ? "FizzBuzz" : "Fizz") : (buzzPredicate.test(i) ? "Buzz" : i))
+                .mapToObj(i -> fizzPredicate.test(i) ? (buzzPredicate.test(i) ? FIZZ_BUZZ : FIZZ) : (buzzPredicate.test(i) ? BUZZ : i))
                 .forEach(System.out::println);
         System.out.println("--------------------------stage2---------------------");
     }
